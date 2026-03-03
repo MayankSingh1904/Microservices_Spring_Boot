@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Microservices Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url('/images/home.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .container {
+            min-height: 100vh;
+            background: rgba(0, 0, 0, 0.65);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 50px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .card {
+            width: 260px;
+            height: 180px;
+            border-radius: 20px;
+            padding: 25px;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: 0.4s ease;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 25px 40px rgba(0,0,0,0.6);
+        }
+
+        .card:nth-child(1) {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .card:nth-child(2) {
+            background: linear-gradient(135deg, #ff512f, #dd2476);
+        }
+
+        .card:nth-child(3) {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+        }
+
+        .card h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Microservices Dashboard</h1>
+
+    <div class="card-container">
+
+        <a href="/users" class="card">
+            <h2>User Service</h2>
+            <p>Manage Users</p>
+        </a>
+
+        <a href="http://localhost:8082/products" class="card">
+            <h2>Product Service</h2>
+            <p>Manage Products</p>
+        </a>
+
+        <a href="http://localhost:8083/orders" class="card">
+            <h2>Order Service</h2>
+            <p>Manage Orders</p>
+        </a>
+
+    </div>
+</div>
+</body>
+</html>

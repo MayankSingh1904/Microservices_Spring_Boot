@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Products</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: url('/images/9.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 40px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .add-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #007bff, #00c3ff);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .add-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        th, td {
+			color: black;
+    		font-weight: 500;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        tr:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Product List</h2>
+
+    <a href="/products/new" class="add-btn">+ Add Product</a>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.quantity}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

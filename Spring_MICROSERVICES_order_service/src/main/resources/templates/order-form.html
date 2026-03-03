@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Order</title>
+</head>
+<body style="font-family: Arial; padding:40px;">
+
+<h2 style="text-align:center;">Create Order</h2>
+
+<form th:action="@{/orders}" th:object="${order}" method="post"
+      style="width:300px; margin:auto; background:white; padding:20px; border-radius:8px;">
+
+    <label>User ID</label><br>
+    <input type="number" th:field="*{userId}" style="width:100%; padding:8px;"><br><br>
+
+    <label>Product ID</label><br>
+    <input type="number" th:field="*{productId}" style="width:100%; padding:8px;"><br><br>
+
+    <label>Quantity</label><br>
+    <input type="number" th:field="*{quantity}" style="width:100%; padding:8px;"><br><br>
+
+    <button type="submit"
+            style="width:100%; padding:10px; background:#28a745; color:white; border:none; border-radius:5px;">
+        Save Order
+    </button>
+</form>
+
+</body>
+</html>
+<style>
+body {
+    background: url('/images/7.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+</style>
